@@ -2,7 +2,7 @@
    "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<title>Въведение - Научи Haskell за по-добър живот!</title>
+<title>Introduction - Learn You a Haskell for Great Good!</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <base href="{{request.url_root}}">
  
@@ -20,38 +20,38 @@
                     <li style="text-align:left">
                                             </li>
                     <li style="text-align:center">
-                        <a href="chapters">Съдържание</a>
+                        <a href="chapters">Table of contents</a>
                     </li>
                     <li style="text-align:right">
-                                                        <a href="starting-out" class="nxtlink">Първи Стъпки</a>
+                                                        <a href="starting-out" class="nxtlink">Starting Out</a>
                                             </li>
                 </ul>
             </div>
-        <h1>Въведение</h1> 
+        <h1>Introduction</h1> 
 <a name="about-this-tutorial"></a>
-<h2>За тази серия от уроци</h2>
+<h2>About this tutorial</h2>
 <p>
-Добре дошли в <em>Learn You a Haskell for Great Good</em>! 
-Ако четете това, най-вероятно искате да научите Haskell. Дошли сте на правилното място. Но първо, нека поговорим за тази поредица от уроци.
+Welcome to <em>Learn You a Haskell for Great Good</em>! 
+If you're reading this, chances are you want to learn Haskell. Well, you've come to the right place, but let's talk about this tutorial a bit first.  
 </p>
 <p>
-Реших да напиша тези уроци, защото исках да кристализирам собствените си знания за Haskell и защото видях, че мога да помогна на хора, които започват да учат Haskell, да се запознаят с него от моята гледна точка. Има доста уроци за Haskell въртящи се из мрежата. Когато аз започвах да го уча, не използвах само един източник на информация. Наичнът, по който го научих, беше като четях от различни уроци и статии, защото всяки един от тях обясняваше нещо по различен начин от спрямо другите. Използвайки различни ресурси, успях да подредя пъзела и в крайна сметка нещата се подредиха в главата ми. Тази поредица е просто опит да добавя още един ресурс, полезен при ученето на Haskell, увеличивайки вероятността да намериш нещо по вкуса ти.
+I decided to write this because I wanted to solidify my own knowledge of Haskell and because I thought I could help people new to Haskell learn it from my perspective. There are quite a few tutorials on Haskell floating around on the internet. When I was starting out in Haskell, I didn't learn from just one resource. The way I learned it was by reading several different tutorials and articles because each explained something in a different way than the other did. By going through several resources, I was able put together the pieces and it all just came falling into place. So this is an attempt at adding another useful resource for learning Haskell so you have a bigger chance of finding one you like.
 </p>
 <img src="http://s3.amazonaws.com/lyah/bird.png" alt="bird" class="left" width="230" height="192">
 <p>
-Тази поредица от уроци е предназначена за хора, които вече има познания в императивни езици за програмиране (C,C++, Java, Python &hellip;), но не са програмирали на функционален език преди (Haskell, ML, OCaml &hellip;). Въпреки това, съм убеден, че дори и да нямаш някакъв особено голям опит с какъвто и да е програмен език, умен човек, като теб, ще може да следи уроците и да научи Haskell :).
+This tutorial is aimed at people who have experience in imperative programming languages (C, C++, Java, Python &hellip;) but haven't programmed in a functional language before (Haskell, ML, OCaml &hellip;). Although I bet that even if you don't have any significant programming experience, a smart person such as yourself will be able to follow along and learn Haskell.
 </p>
 <p>
-Каналът #haskell във freenode мрежата e чудесно място за въпроси, ако изпитвате трудности. Хората там са много дружелюбни, търпеливи и подхождат с разбиране към тези с по-малко опит.
+The channel #haskell on the freenode network is a great place to ask questions if you're feeling stuck. People there are extremely nice, patient and understanding to newbies.
 </p>
 <p>
-Аз се провалих около два пъти преди да успея да увладея Haskell, защото просто всичко ми се струваше твърде странно и не успях да го разбера. Но в даден момент всичко просто се намества и след този начален мъглив период, всичко по-нататъка беше доста по-лесно за усвояване. Накратко, просто се опитвам да кажа че, Haskel е страхотен и ако си заинтересуван в програмирането наистина трябва да го научиш, дори и да ти се струва странно в началото. Да научиш Haskell е като да се научиш да програмираш за първи път - супер забавно е. Кара те да мислиш по различен начиш, което ни води до следващата секция &hellip;
+I failed to learn Haskell approximately 2 times before finally grasping it because it all just seemed too weird to me and I didn't get it. But then once it just "clicked" and after getting over that initial hurdle, it was pretty much smooth sailing. I guess what I'm trying to say is: Haskell is great and if you're interested in programming you should really learn it even if it seems weird at first. Learning Haskell is much like learning to program for the first time &mdash; it's fun! It forces you to think differently, which brings us to the next section &hellip;
 </p>
 
-<a name="so-whats-haskell"></a><h2>Какво точно е Haskell?</h2>
+<a name="so-whats-haskell"></a><h2>So what's Haskell?</h2>
 <p>
 <img src="http://s3.amazonaws.com/lyah/fx.png" alt="fx" class="right" width="150" height="146">
-Haskell e <em>Чист функционален език</em>(purely functional programming language).
+Haskell is a <em>purely functional programming language</em>.
 In imperative languages you get things done by giving the computer a sequence of tasks and then it executes them. While executing them, it can change state. For instance, you set variable <span class="fixed">a</span> to 5 and then do some stuff and then set it to something else. You have control flow structures for doing some action several times. In purely functional programming you don't tell the computer what to do as such but rather you tell it what stuff <i>is</i>. The factorial of a number is the product of all the numbers from 1 to that number, the sum of a list of numbers is the first number plus the sum of all the other numbers, and so on. You express that in the form of functions. You also can't set a variable to something and then set it to something else later. If you say that <span class="fixed">a</span> is 5, you can't say it's something else later because you just said it was 5. What are you, some kind of liar? So in purely functional languages, a function has no side-effects. The only thing a function can do is calculate something and return it as a result. At first, this seems kind of limiting but it actually has some very nice consequences: if a function is called twice with the same parameters, it's guaranteed to return the same result. That's called referential transparency and not only does it allow the compiler to reason about the program's behavior, but it also allows you to easily deduce (and even prove) that a function is correct and then build more complex functions by gluing simple functions together.
 </p>
 <p>
@@ -88,11 +88,11 @@ GHC can take a Haskell script (they usually have a .hs extension) and compile it
                 </ul>
             </div>
         </div>
-    <script type="text/javascript" src="static/sh/Scripts/shCore.js"></script>
-    <script type="text/javascript" src="static/shBrushHaskell.js"></script>
-    <script type="text/javascript" src="static/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/Scripts/shCore.js"></script>
+    <script type="text/javascript" src="shBrushHaskell.js"></script>
+    <script type="text/javascript" src="shBrushPlain.js"></script>
     <script type="text/javascript">
-    dp.SyntaxHighlighter.ClipboardSwf = 'static/sh/Scripts/clipboard.swf';
+    dp.SyntaxHighlighter.ClipboardSwf = '/sh/Scripts/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code', false, false, false, 1, false);
     </script>
 </div>
